@@ -1,0 +1,333 @@
+******************************************************************************
+                  MSP430 Linker PC v4.0.0                      
+******************************************************************************
+>> Linked Sat Sep 29 21:36:28 2012
+
+OUTPUT FILE NAME:   <ST7565 LCD.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000f9f0
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000080  0000003a  00000046  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000f800   000007e0  000004ca  00000316  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000000  00000002  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000000  00000002  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     0    0000f800    00000000     UNINITIALIZED
+
+.pinit     0    0000f800    00000000     UNINITIALIZED
+
+.bss       0    00000200    00000008     UNINITIALIZED
+                  00000200    00000004     rts430.lib : _lock.obj (.bss)
+                  00000204    00000004                : boot.obj (.bss)
+
+.stack     0    0000024c    00000032     UNINITIALIZED
+                  0000024c    00000002     rts430.lib : boot.obj (.stack)
+                  0000024e    00000030     --HOLE--
+
+.text      0    0000f800    00000266     
+                  0000f800    000000c6     main.obj (.text:main)
+                  0000f8c6    00000042     main.obj (.text:lcdClr)
+                  0000f908    00000034     main.obj (.text:printc)
+                  0000f93c    0000002e     main.obj (.text:doSPI)
+                  0000f96a    0000002e     main.obj (.text:gotoXy)
+                  0000f998    0000002c     rts430.lib : asr16.obj (.text)
+                  0000f9c4    0000002c                : lsl16.obj (.text)
+                  0000f9f0    0000001e                : boot.obj (.text:_c_int00_noinit_noexit)
+                  0000fa0e    00000016     main.obj (.text:prints)
+                  0000fa24    00000014     rts430.lib : mult16.obj (.text)
+                  0000fa38    00000010                : epilog.obj (.text)
+                  0000fa48    0000000a     main.obj (.text:sendCmd)
+                  0000fa52    0000000a     main.obj (.text:sendData)
+                  0000fa5c    00000004     rts430.lib : pre_init.obj (.text:_system_pre_init)
+                  0000fa60    00000004                : exit.obj (.text:abort)
+                  0000fa64    00000002                : _lock.obj (.text:_nop)
+
+.const     0    0000fa66    00000264     
+                  0000fa66    0000023a     main.obj (.const:font6x8)
+                  0000fca0    0000002a     main.obj (.const:.string)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000200   .bss
+0000f800   .text
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000fa60   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010ff   CALBC1_1MHZ
+000010fe   CALDCO_1MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000002   IFG1
+0000f998   I_ASR
+0000f9c0   I_ASR_1
+0000f9ae   I_ASR_10
+0000f9ac   I_ASR_11
+0000f9aa   I_ASR_12
+0000f9a8   I_ASR_13
+0000f9a6   I_ASR_14
+0000f9a4   I_ASR_15
+0000f9be   I_ASR_2
+0000f9bc   I_ASR_3
+0000f9ba   I_ASR_4
+0000f9b8   I_ASR_5
+0000f9b6   I_ASR_6
+0000f9b4   I_ASR_7
+0000f9b2   I_ASR_8
+0000f9b0   I_ASR_9
+0000f9c4   I_LSL
+0000f9ec   I_LSL_1
+0000f9da   I_LSL_10
+0000f9d8   I_LSL_11
+0000f9d6   I_LSL_12
+0000f9d4   I_LSL_13
+0000f9d2   I_LSL_14
+0000f9d0   I_LSL_15
+0000f9ea   I_LSL_2
+0000f9e8   I_LSL_3
+0000f9e6   I_LSL_4
+0000f9e4   I_LSL_5
+0000f9e2   I_LSL_6
+0000f9e0   I_LSL_7
+0000f9de   I_LSL_8
+0000f9dc   I_LSL_9
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000172   TACCR0
+00000174   TACCR1
+00000162   TACCTL0
+00000164   TACCTL1
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+00000120   WDTCTL
+0000027e   __STACK_END
+00000032   __STACK_SIZE
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+ffffffff   __binit__
+00000200   __bss__
+ffffffff   __c_args__
+ffffffff   __cinit__
+00000208   __end__
+0000fa66   __etext__
+0000fa24   __mpyi
+ffffffff   __pinit__
+0000f800   __text__
+0000f9f0   _c_int00
+0000f9f0   _c_int00_noinit_noexit
+00000204   _cleanup_ptr
+00000206   _dtors_ptr
+00000200   _lock
+0000fa64   _nop
+0000fffe   _reset_vector
+0000024c   _stack
+0000fa5c   _system_pre_init
+00000202   _unlock
+0000fa60   abort
+ffffffff   binit
+ffffffff   cinit
+0000f93c   doSPI
+00000208   end
+0000fa66   etext
+0000fa66   font6x8
+0000fa44   func_epilog_1
+0000fa42   func_epilog_2
+0000fa40   func_epilog_3
+0000fa3e   func_epilog_4
+0000fa3c   func_epilog_5
+0000fa3a   func_epilog_6
+0000fa38   func_epilog_7
+0000f96a   gotoXy
+0000f8c6   lcdClr
+0000f800   main
+ffffffff   pinit
+0000f908   printc
+0000fa0e   prints
+0000fa48   sendCmd
+0000fa52   sendData
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000032   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000200   .bss
+00000200   __bss__
+00000200   _lock
+00000202   _unlock
+00000204   _cleanup_ptr
+00000206   _dtors_ptr
+00000208   __end__
+00000208   end
+0000024c   _stack
+0000027e   __STACK_END
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000f800   .text
+0000f800   __text__
+0000f800   main
+0000f8c6   lcdClr
+0000f908   printc
+0000f93c   doSPI
+0000f96a   gotoXy
+0000f998   I_ASR
+0000f9a4   I_ASR_15
+0000f9a6   I_ASR_14
+0000f9a8   I_ASR_13
+0000f9aa   I_ASR_12
+0000f9ac   I_ASR_11
+0000f9ae   I_ASR_10
+0000f9b0   I_ASR_9
+0000f9b2   I_ASR_8
+0000f9b4   I_ASR_7
+0000f9b6   I_ASR_6
+0000f9b8   I_ASR_5
+0000f9ba   I_ASR_4
+0000f9bc   I_ASR_3
+0000f9be   I_ASR_2
+0000f9c0   I_ASR_1
+0000f9c4   I_LSL
+0000f9d0   I_LSL_15
+0000f9d2   I_LSL_14
+0000f9d4   I_LSL_13
+0000f9d6   I_LSL_12
+0000f9d8   I_LSL_11
+0000f9da   I_LSL_10
+0000f9dc   I_LSL_9
+0000f9de   I_LSL_8
+0000f9e0   I_LSL_7
+0000f9e2   I_LSL_6
+0000f9e4   I_LSL_5
+0000f9e6   I_LSL_4
+0000f9e8   I_LSL_3
+0000f9ea   I_LSL_2
+0000f9ec   I_LSL_1
+0000f9f0   _c_int00
+0000f9f0   _c_int00_noinit_noexit
+0000fa0e   prints
+0000fa24   __mpyi
+0000fa38   func_epilog_7
+0000fa3a   func_epilog_6
+0000fa3c   func_epilog_5
+0000fa3e   func_epilog_4
+0000fa40   func_epilog_3
+0000fa42   func_epilog_2
+0000fa44   func_epilog_1
+0000fa48   sendCmd
+0000fa52   sendData
+0000fa5c   _system_pre_init
+0000fa60   C$$EXIT
+0000fa60   abort
+0000fa64   _nop
+0000fa66   __etext__
+0000fa66   etext
+0000fa66   font6x8
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __cinit__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   cinit
+ffffffff   pinit
+
+[119 symbols]
